@@ -51,7 +51,12 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Bump version and create tag
-        run: bump-my-version --allow-dirty ${{ github.event.inputs.part }}
+        uses: callowayproject/bump-my-version@master
+        env:
+          BUMPVERSION_TAG: "true"
+        with:
+          args: ${{ github.event.inputs.part }}
+          github-token: ${{ secrets.GH_TOKEN }}
 
       - name: Push changes and tags
         run: git push --follow-tags
