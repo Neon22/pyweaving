@@ -8,7 +8,7 @@ from .Drawstyle import Drawstyle
 from .Draft import WarpThread, WeftThread, Shaft, Treadle, Draft
 from .repeats import find_repeats, find_mirrors, find_mirrors_repeats, prune_pattern
 
-__version__ = '0.5'
+__version__ = '0.5.0'
 
 # For Sphinx autodoc
 __all__ = ["Draft", "Color", "Drawstyle", "WarpThread", "WeftThread", "Shaft", "Treadle", "find_repeats"]
