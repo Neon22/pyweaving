@@ -57,7 +57,11 @@ jobs:
         with:
           args: ${{ github.event.inputs.part }}
           github-token: ${{ secrets.GH_TOKEN }}
-
+      - name: Check
+        if: steps.bump.outputs.bumped == 'true'
+        run: |
+          echo "Version was bumped from ${{ steps.bump.outputs.previous-version }} to ${{ steps.bump.outputs.current-version }}!"
+          
       - name: Push changes and tags
         run: git push --follow-tags
 
