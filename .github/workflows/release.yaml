@@ -40,8 +40,10 @@ jobs:
           pip install -r requirements.txt
           pip install bump-my-version pytest
 
-      - name: Run tests
-        run: pytest
+      - name: Install and run tests via tox
+        run: |
+          pip install tox
+          tox -e py
 
       - name: Configure Git user
         run: |
