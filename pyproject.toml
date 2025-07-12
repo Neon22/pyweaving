@@ -1,0 +1,7 @@
+[tool.bumpversion]
+current_version = "0.5.0" # Set this to your current version
+commit = true
+tag = true
+
+[[tool.bumpversion.files]]
+filename = "pyweaving/__init__.py"
